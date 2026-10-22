@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Monjurul Islam Polash</title>
+<meta name="description" content="Monjurul Islam Polash, digital marketer, SEO specialist, web developer and virtual assistant in Dhaka, Bangladesh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Concept: a dispatch desk in Dhaka. The hero is a live time ledger of the client markets, so the first thing a visitor sees is "I am awake in your hours".
+   Palette: bottle green (the flag), a single red used only for "live", deep green-black, mint-grey paper.
+   Type: Bricolage Grotesque display, Hind Siliguri body (covers Bangla), JetBrains Mono for clocks. */
+:root{
+  --bg:#edf3ef; --surface:#ffffff; --surface2:#e1eae4; --ink:#0c1d17; --muted:#475d53; --line:#c6d4cb;
+  --green:#00694c; --on-green:#ffffff; --live:#d92d3b; --tint:#d3e9dd; --biz:#bcdccb;
+  --f-display:'Bricolage Grotesque','Hind Siliguri',system-ui,sans-serif;
+  --f-body:'Hind Siliguri','Segoe UI',system-ui,sans-serif;
+  --f-mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#07211b; --surface:#0d2f26; --surface2:#123a30; --ink:#e8f2ed; --muted:#9bb7aa; --line:#1f4a3d;
+    --green:#3fd9a0; --on-green:#04241b; --live:#ff6b73; --tint:#0f3a2d; --biz:#1b5a47; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#07211b; --surface:#0d2f26; --surface2:#123a30; --ink:#e8f2ed; --muted:#9bb7aa; --line:#1f4a3d;
+  --green:#3fd9a0; --on-green:#04241b; --live:#ff6b73; --tint:#0f3a2d; --biz:#1b5a47; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+img{max-width:100%}
+[hidden]{display:none!important}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;line-height:1.05;letter-spacing:-.02em}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:68px;flex-wrap:wrap;padding-block:8px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--f-display);font-weight:700;letter-spacing:-.01em;font-size:1.05rem;min-width:0}
+.mark{width:38px;height:38px;border-radius:50%;background:var(--green);color:var(--on-green);display:grid;place-items:center;font:700 .85rem var(--f-display);letter-spacing:.02em;flex:none}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{text-decoration:none;padding:8px 12px;border-radius:8px;font-size:.95rem;color:var(--muted)}
+.nav a:hover{background:var(--surface2);color:var(--ink)}
+.tools{display:flex;gap:8px;align-items:center;margin-left:8px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface)}
+.seg button{border:0;background:none;color:var(--muted);font:600 .82rem var(--f-body);padding:5px 11px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--green);color:var(--on-green)}
+.iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;display:grid;place-items:center}
+.iconbtn:hover{border-color:var(--green)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;background:var(--green);color:var(--on-green);font:600 1rem var(--f-body);text-decoration:none;border:2px solid var(--green);cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.small{padding:8px 16px;font-size:.9rem}
+@media (max-width:900px){.nav{display:none}.top .wrap{gap:10px}.tools{margin-left:auto}}
+
+/* hero */
+.hero{padding-block:clamp(40px,7vw,88px) clamp(36px,5vw,64px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,64px);align-items:start}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr)}}
+.status{display:inline-flex;align-items:center;gap:10px;font:500 .9rem var(--f-mono);color:var(--muted);flex-wrap:wrap}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--live);box-shadow:0 0 0 0 var(--live);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--live) 55%,transparent)}70%,100%{box-shadow:0 0 0 10px transparent}}
+.hero h1{font-size:clamp(2.7rem,7.2vw,5.6rem);font-weight:800;margin:20px 0 18px;line-height:.98}
+.hero .role{font:600 clamp(1.15rem,2.2vw,1.45rem)/1.35 var(--f-display);max-width:30ch;margin-bottom:16px}
+.hero .lead{color:var(--muted);max-width:52ch;font-size:1.08rem}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.id{display:flex;align-items:center;gap:14px;margin-top:34px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+.avatar{position:relative;width:64px;height:64px;border-radius:50%;background:var(--tint);color:var(--green);display:grid;place-items:center;font:800 1.2rem var(--f-display);overflow:hidden;flex:none}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.ledger{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px clamp(16px,3vw,26px);box-shadow:0 1px 0 var(--line)}
+.ledger h2{font-size:1.15rem;margin-bottom:4px}
+.ledger .sub{color:var(--muted);font-size:.9rem;margin-bottom:14px}
+.rows{display:grid}
+.lrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:12px 0;border-top:1px solid var(--line);animation:rise .55s both;animation-delay:calc(var(--i)*70ms)}
+.lrow.home{border-top:0;padding-top:4px}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.city{font-weight:600;line-height:1.25}
+.city small{display:block;font:400 .8rem var(--f-body);color:var(--muted)}
+.clock{font:500 1.35rem var(--f-mono);text-align:right}
+.bar{grid-column:1/-1;display:grid;grid-template-columns:repeat(24,1fr);gap:2px;height:8px;margin-top:4px}
+.bar i{background:var(--surface2);border-radius:2px}
+.bar i.b{background:var(--biz)}
+.bar i.n{background:var(--live)}
+.bstate{grid-column:1/-1;font-size:.82rem;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:.8rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:14px;height:8px;border-radius:2px;display:inline-block}
+
+/* numbers */
+.facts{border-block:1px solid var(--line);background:var(--surface)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.fact{padding:26px 20px;border-left:1px solid var(--line)}
+.fact:first-child{border-left:0;padding-left:0}
+.fact b{display:block;font:800 clamp(2rem,4.5vw,3.2rem)/1 var(--f-display);letter-spacing:-.03em;color:var(--green)}
+.fact span{color:var(--muted);font-size:.95rem}
+@media (max-width:700px){.facts .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.fact:nth-child(3){border-left:0;padding-left:0}.fact:nth-child(n+3){border-top:1px solid var(--line)}}
+
+section.s{padding-block:clamp(52px,8vw,104px)}
+.sh{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:20px 48px;margin-bottom:38px;align-items:end}
+.sh h2{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:800}
+.sh p{color:var(--muted);max-width:56ch}
+@media (max-width:800px){.sh{grid-template-columns:minmax(0,1fr)}}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:20px 48px}
+.about p{max-width:62ch;font-size:1.08rem}
+.about p+p{margin-top:14px;color:var(--muted)}
+@media (max-width:800px){.about{grid-template-columns:minmax(0,1fr)}}
+
+/* services */
+.svc{border-top:1px solid var(--ink)}
+.srow{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:12px 48px;padding:26px 8px;border-bottom:1px solid var(--line);transition:background .2s}
+.srow:hover{background:var(--surface)}
+.srow h3{font-size:clamp(1.4rem,2.6vw,2rem);font-weight:700}
+.pills{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start}
+.pills span{padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:.95rem}
+@media (max-width:800px){.srow{grid-template-columns:minmax(0,1fr)}}
+
+/* process */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:s}
+.steps li{padding:22px 22px 8px 0;border-top:3px solid var(--green);counter-increment:s}
+.steps li::before{content:counter(s);display:block;font:500 .95rem var(--f-mono);color:var(--green);margin-bottom:10px}
+.steps h3{font-size:1.3rem;margin-bottom:8px}
+.steps p{color:var(--muted);font-size:1rem}
+@media (max-width:800px){.steps{grid-template-columns:minmax(0,1fr)}.steps li{padding-bottom:18px}}
+
+/* channels */
+.split{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px}
+@media (max-width:900px){.split{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px}
+.panel h3{font-size:1.4rem;margin-bottom:6px}
+.panel>p{color:var(--muted);margin-bottom:14px}
+.chan{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:2px 16px;padding:10px 0;border-top:1px solid var(--line)}
+.chan b{font-weight:600}
+.chan span{color:var(--muted);font-size:.95rem}
+@media (max-width:560px){.chan{grid-template-columns:minmax(0,1fr)}}
+
+/* toolkit */
+.tk-top{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.search{flex:1 1 280px;min-width:0;position:relative}
+.search input{width:100%;padding:14px 18px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:400 1rem var(--f-body)}
+.search input:focus{outline:none;border-color:var(--green)}
+.tk-count{font:500 .9rem var(--f-mono);color:var(--muted)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:500 .9rem var(--f-body);cursor:pointer}
+.chip small{color:var(--muted);margin-left:6px;font-family:var(--f-mono)}
+.chip[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:var(--on-green)}
+.chip[aria-pressed="true"] small{color:inherit;opacity:.8}
+.overview{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.ov{text-align:left;padding:18px;border:1px solid var(--line);background:var(--surface);border-radius:16px;cursor:pointer;color:var(--ink);font:inherit;transition:border-color .2s,transform .2s}
+.ov:hover{border-color:var(--green);transform:translateY(-3px)}
+.ov b{display:flex;justify-content:space-between;gap:10px;font:700 1.1rem var(--f-display);margin-bottom:8px}
+.ov b em{font:500 .9rem var(--f-mono);font-style:normal;color:var(--green)}
+.ov span{display:block;color:var(--muted);font-size:.9rem;line-height:1.5}
+.sub-h{font:700 1.05rem var(--f-display);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:8px}
+.sub-h small{font:500 .85rem var(--f-mono);color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.tool{display:grid;gap:3px;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);text-decoration:none;min-width:0;position:relative;transition:border-color .15s,transform .15s}
+.tool:hover{border-color:var(--green);transform:translateY(-2px)}
+.tn{font-weight:600;padding-right:52px;overflow-wrap:anywhere}
+.td{color:var(--muted);font-size:.88rem;line-height:1.4}
+.tc{color:var(--green);font:500 .75rem var(--f-mono)}
+.tb{position:absolute;top:11px;right:11px;font:500 .68rem var(--f-mono);padding:2px 7px;border-radius:6px;border:1px solid var(--green);color:var(--green)}
+.tb.EARN{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.tb.INFO{border-color:var(--muted);color:var(--muted)}
+.keynote{margin-top:22px;color:var(--muted);font-size:.9rem;display:flex;gap:16px;flex-wrap:wrap}
+.empty{padding:28px;border:1px dashed var(--line);border-radius:14px;color:var(--muted)}
+.back{border:0;background:none;color:var(--green);font:600 .95rem var(--f-body);cursor:pointer;padding:0;margin-bottom:6px}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px}
+@media (max-width:900px){.contact{grid-template-columns:minmax(0,1fr)}}
+.ways{display:grid;gap:10px;align-content:start}
+.way{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.way small{grid-column:1;color:var(--muted);font-size:.85rem}
+.way b{grid-column:1;font:500 1.05rem var(--f-mono);overflow-wrap:anywhere}
+.way .cp{grid-column:2;grid-row:1/3}
+.cp{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:7px 14px;font:600 .85rem var(--f-body);cursor:pointer}
+.cp:hover{border-color:var(--green)}
+.way-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.form{display:grid;gap:14px;align-content:start}
+.form label{display:grid;gap:6px;font-weight:600;font-size:.95rem}
+.form input,.form textarea{padding:13px 15px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:400 1rem var(--f-body);width:100%}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--green)}
+.form textarea{min-height:130px;resize:vertical}
+.hint{color:var(--muted);font-size:.9rem}
+.ok{padding:12px 14px;border-radius:12px;background:var(--tint);color:var(--ink);font-size:.95rem}
+.plat{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+
+footer{border-top:1px solid var(--line);padding-block:32px 40px;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;gap:12px 28px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Monjurul Islam Polash">
+      <span class="mark">MIP</span><span data-i18n="brand">Monjurul Islam Polash</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#process" data-i18n="nav_process">Process</a>
+      <a href="#toolkit" data-i18n="nav_toolkit">AI toolkit</a>
+      <a href="#channels" data-i18n="nav_channels">Channels</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="tools">
+      <div class="seg" role="group" aria-label="Language">
+        <button type="button" id="l-en" aria-pressed="true">EN</button>
+        <button type="button" id="l-bn" aria-pressed="false" lang="bn">বাংলা</button>
+      </div>
+      <button type="button" class="iconbtn" id="theme" aria-label="Switch light and dark theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a class="btn small" href="#contact" data-i18n="hire">Hire me</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="status"><span class="dot" aria-hidden="true"></span><span data-i18n="open">Open for projects</span><span aria-hidden="true">/</span><span>Dhaka <span class="mono" id="hero-clock">--:--</span></span></p>
+      <h1 data-i18n="name">Monjurul Islam Polash</h1>
+      <p class="role" data-i18n="role">Digital marketer, SEO specialist and web developer in Dhaka, Bangladesh.</p>
+      <p class="lead" data-i18n="lead">Freelancer for 5+ years across digital marketing, SEO, web development, social media and virtual assistance. Available 24/7.</p>
+      <div class="cta">
+        <a class="btn" href="#contact" data-i18n="cta1">Start a project</a>
+        <a class="btn ghost" href="#toolkit" data-i18n="cta2">Browse the AI toolkit</a>
+      </div>
+      <div class="id">
+        <span class="avatar" aria-hidden="true">MIP<img src="https://uploads.onecompiler.io/44a4h29nq/44a4gxy6p/round%20main%20without%20background.png" alt="" onerror="this.remove()"></span>
+        <span data-i18n="tag">Transforming ideas into digital reality.</span>
+      </div>
+    </div>
+
+    <aside class="ledger" aria-labelledby="lg-t">
+      <h2 id="lg-t" data-i18n="lg_t">Dhaka and your city, right now</h2>
+      <p class="sub" data-i18n="lg_s">Each bar is one day in that city. The red hour is now. Green hours are 9 am to 6 pm there.</p>
+      <div class="rows" id="rows"></div>
+      <div class="legend" aria-hidden="true">
+        <span><i style="background:var(--live)"></i><span data-i18n="lg_now">Now</span></span>
+        <span><i style="background:var(--biz)"></i><span data-i18n="lg_biz">Business hours</span></span>
+        <span><i style="background:var(--surface2)"></i><span data-i18n="lg_off">After hours</span></span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><b>5+</b><span data-i18n="f1">years of freelancing</span></div>
+    <div class="fact"><b>500+</b><span data-i18n="f2">projects</span></div>
+    <div class="fact"><b>13</b><span data-i18n="f3">YouTube channels</span></div>
+    <div class="fact"><b id="f-tools">563</b><span data-i18n="f4">AI tools in my toolkit</span></div>
+  </div>
+</div>
+
+<section class="s" id="about">
+  <div class="wrap about">
+    <h2 style="font-size:clamp(2rem,4.6vw,3.4rem);font-weight:800" data-i18n="about_t">About</h2>
+    <div>
+      <p data-i18n="about_1">I am Monjurul Islam Polash, a freelancer in Dhaka. For more than five years I have helped businesses grow online with marketing, search optimization, websites and day-to-day admin support.</p>
+      <p data-i18n="about_2">My goal is simple: deliver results that go beyond what the client asked for. I also run a network of YouTube channels and I teach, so I explain my work in plain words.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="services" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh"><h2 data-i18n="svc_t">Services</h2><p data-i18n="svc_s">Six areas of work. Pick one, or combine them in a single project.</p></div>
+    <div class="svc" id="svc"></div>
+  </div>
+</section>
+
+<section class="s" id="process" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh"><h2 data-i18n="pr_t">How a project runs</h2><p data-i18n="pr_s">Four steps, the same for a small task and a long engagement.</p></div>
+    <ol class="steps">
+      <li><h3 data-i18n="p1t">Brief</h3><p data-i18n="p1d">You share the goal, budget and deadline. I reply with scope and price.</p></li>
+      <li><h3 data-i18n="p2t">Plan</h3><p data-i18n="p2d">A short plan with milestones, so you know what arrives and when.</p></li>
+      <li><h3 data-i18n="p3t">Build</h3><p data-i18n="p3d">Work happens in small steps and you see progress along the way.</p></li>
+      <li><h3 data-i18n="p4t">Deliver</h3><p data-i18n="p4d">Handover of the finished work, and help after launch.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="s" id="channels" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh"><h2 data-i18n="ch_t">Mystic Globe Docs</h2><p data-i18n="ch_s">My own media project: one documentary brand published through 13 YouTube channels, one for each market.</p></div>
+    <div class="split">
+      <div class="panel">
+        <h3 data-i18n="ch_h">The channels</h3>
+        <p data-i18n="ch_p">Twelve country hubs under one brand, plus a channel with no voice.</p>
+        <div id="chan"></div>
+      </div>
+      <div class="panel">
+        <h3 data-i18n="te_h">Teaching</h3>
+        <p data-i18n="te_p">I work as a teacher too. The AI toolkit below has a Teaching group with 47 tools for lesson plans, quizzes, grading, classroom management and online courses.</p>
+        <a class="btn ghost small" href="#toolkit" id="to-teach" data-i18n="te_b">Open the Teaching tools</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="toolkit" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh"><h2 data-i18n="tk_t">AI toolkit</h2><p><span id="tk-intro"></span></p></div>
+    <div class="tk-top">
+      <div class="search"><input id="tk-q" type="search" autocomplete="off" data-i18n-ph="tk_ph" placeholder="Search tools, for example video, invoice, Indeed"></div>
+      <span class="tk-count" id="tk-count"></span>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Tool groups"></div>
+    <div id="tk-out"></div>
+    <div class="keynote"><span><b class="mono">FREE</b> <span data-i18n="k1">free or freemium</span></span><span><b class="mono">EARN</b> <span data-i18n="k2">a place to earn money</span></span><span><b class="mono">INFO</b> <span data-i18n="k3">official information</span></span><span data-i18n="k4">No badge means paid. Plans and prices change, so check each site.</span></div>
+  </div>
+</section>
+
+<section class="s" id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh"><h2 data-i18n="ct_t">Start a project</h2><p data-i18n="ct_s">Tell me what you need. Direct hiring means no platform fees.</p></div>
+    <div class="contact">
+      <div class="ways">
+        <div class="way"><small data-i18n="c_wa">WhatsApp</small><b>+880 1723-328481</b><button type="button" class="cp" data-copy="+8801723328481" data-i18n="copy">Copy</button></div>
+        <div class="way"><small data-i18n="c_ph">Phone</small><b>+880 1730-746563</b><button type="button" class="cp" data-copy="+8801730746563" data-i18n="copy">Copy</button></div>
+        <div class="way"><small data-i18n="c_em">Email</small><b>Polash@programmer.net</b><button type="button" class="cp" data-copy="Polash@programmer.net" data-i18n="copy">Copy</button></div>
+        <div class="way-links">
+          <a class="btn small" href="https://wa.me/8801723328481" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn ghost small" href="https://www.messenger.com/t/1319856144" target="_blank" rel="noopener">Messenger</a>
+          <a class="btn ghost small" href="https://github.com/MIPolash-Prog" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn ghost small" href="mailto:Polash@programmer.net" data-i18n="c_mail">Email me</a>
+        </div>
+        <div class="plat" id="plat" hidden></div>
+      </div>
+      <form class="form" id="form" novalidate>
+        <label for="f-name"><span data-i18n="fn">Your name</span><input id="f-name" name="name" autocomplete="name"></label>
+        <label for="f-need"><span data-i18n="fs">What do you need?</span><input id="f-need" name="need" placeholder="SEO, website, ads, virtual assistant"></label>
+        <label for="f-msg"><span data-i18n="fm">Message</span><textarea id="f-msg" name="msg"></textarea></label>
+        <button class="btn" type="submit" data-i18n="fb">Open WhatsApp with this message</button>
+        <p class="hint" data-i18n="fh">Your message opens in WhatsApp. Press send there to deliver it.</p>
+        <p class="ok" id="f-ok" role="status" hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Monjurul Islam Polash</span>
+    <span data-i18n="foot">Digital marketing, SEO, web development, virtual assistance. Dhaka, Bangladesh.</span>
+  </div>
+</footer>
+
+<script>
+/* ---- Add your real profile links here. A button appears only for a link you fill in. ---- */
+var PROFILES = { Fiverr:'', Upwork:'', LinkedIn:'', YouTube:'', Facebook:'', Freelancer:'', PeoplePerHour:'', Guru:'' };
+
+var TOOLS = [{"id":"webdev","cat":"Web Development","tools":[["ChatGPT o3","https://chat.openai.com","Best general purpose coding assistant","FREE",""],["Claude 3.7 Sonnet","https://claude.ai","Best for long code and full projects","FREE",""],["Gemini 2.5 Pro","https://gemini.google.com","Google coding assistant","FREE",""],["Cursor","https://cursor.sh","AI first code editor","FREE",""],["Windsurf","https://codeium.com/windsurf","AI IDE with full codebase understanding","FREE",""],["GitHub Copilot","https://github.com/features/copilot","Inline autocomplete","FREE",""],["Bolt.new","https://bolt.new","Full stack app builder","FREE",""],["V0 by Vercel","https://v0.dev","UI component generator","FREE",""],["Lovable","https://lovable.dev","Build full apps from prompts","FREE",""],["Replit AI","https://replit.com","Cloud code editor","FREE",""],["Codeium","https://codeium.com","Free autocomplete","FREE",""],["Tabnine","https://www.tabnine.com","Team focused code completion","FREE",""],["DeepSeek Coder","https://chat.deepseek.com","Open source coding model","FREE",""],["Framer AI","https://www.framer.com","AI website builder","FREE",""],["Webflow AI","https://webflow.com","No code website builder","FREE",""],["Locofy","https://www.locofy.ai","Figma to code","FREE",""],["Galileo AI","https://www.usegalileo.ai","UI design generator","FREE",""],["DuckDB AI","https://duckdb.org","AI powered database","FREE",""],["Supabase AI","https://supabase.com","AI backend builder","FREE",""],["Prisma AI","https://www.prisma.io","ORM with AI","FREE",""],["StackBlitz","https://stackblitz.com","Online IDE with AI","FREE",""],["GitLab Duo","https://about.gitlab.com/duo","Gitlab AI assistant","FREE",""],["Bitbucket AI","https://bitbucket.org/product/ai","Bitbucket assistant","FREE",""],["Postman AI","https://www.postman.com/ai","API testing AI","FREE",""],["Snyk AI","https://snyk.io/ai","Security scanning AI","FREE",""],["ESLint AI","https://eslint.org","Linting with AI","FREE",""],["Playwright AI","https://playwright.dev/ai","Testing automation","FREE",""],["Vercel AI SDK","https://sdk.vercel.ai","Build your own AI apps","FREE",""],["Netlify","https://www.netlify.com","Deploy sites with free hosting","FREE",""],["Vercel","https://vercel.com","Frontend hosting and deploys","FREE",""],["Cloudflare","https://www.cloudflare.com","Free CDN, DNS and security","FREE",""],["Firebase Studio","https://firebase.studio","Build full apps with AI in browser","FREE",""],["Google AI Studio","https://aistudio.google.com","Free Gemini playground and API","FREE",""],["Hugging Face","https://huggingface.co","Open source AI models","FREE",""],["Ollama","https://ollama.com","Run AI models locally","FREE",""],["Continue","https://www.continue.dev","Open source AI code assistant","FREE",""],["Cline","https://cline.bot","AI coding agent for VS Code","FREE",""],["Qodo","https://www.qodo.ai","AI code testing and review","FREE",""],["Amazon Q Developer","https://aws.amazon.com/q/developer/","AWS coding assistant","FREE",""]]},{"id":"seo","cat":"SEO","tools":[["Surfer SEO","https://surferseo.com","AI content optimization","",""],["Frase","https://www.frase.io","AI content briefs","",""],["Clearscope","https://www.clearscope.io","AI content grader","",""],["NeuronWriter","https://neuronwriter.com","AI SEO editor","FREE",""],["MarketMuse","https://www.marketmuse.com","AI content strategy","",""],["RankIQ","https://www.rankiq.com","AI for bloggers","",""],["SEMrush AI","https://www.semrush.com","All in one SEO suite","",""],["Ahrefs AI","https://ahrefs.com","Backlink analysis","",""],["Moz AI","https://moz.com","SEO tools","",""],["SEO.ai","https://seo.ai","AI SEO writer","FREE",""],["AlsoAsked","https://alsoasked.com","People also ask maps","FREE",""],["AnswerThePublic","https://answerthepublic.com","Keyword questions","FREE",""],["Diib","https://diib.com","AI growth analytics","FREE",""],["Screaming Frog AI","https://www.screamingfrog.co.uk","Technical crawler","FREE",""],["Keyword Surfer","https://keywordsurfer.com","Free keyword research","FREE",""],["PageSpeed Insights","https://pagespeed.web.dev","Speed analysis","FREE",""],["Google Search Console AI","https://search.google.com/search-console","Google data","FREE",""],["ChatGPT for SEO","https://chat.openai.com","General SEO tasks","FREE",""],["Perplexity SEO","https://www.perplexity.ai","Research and competitors","FREE",""],["Ubersuggest","https://neilpatel.com/ubersuggest","Free SEO tools","FREE",""],["WordRank AI","https://wordrank.ai","Content optimizer","FREE",""],["Copy.ai SEO","https://www.copy.ai","SEO copywriter","FREE",""],["Jasper SEO","https://www.jasper.ai","SEO content writer","",""],["Outranking","https://www.outranking.io","AI SEO platform","",""],["GrowthBar","https://growthbarseo.com","AI SEO tool","FREE",""],["WriterZen","https://writerzen.net","Keyword explorer","FREE",""],["Google Trends","https://trends.google.com","Search trend explorer","FREE",""],["Google Keyword Planner","https://ads.google.com/home/tools/keyword-planner/","Keyword ideas from Google","FREE",""],["Rank Math","https://rankmath.com","WordPress SEO plugin","FREE",""],["Yoast SEO","https://yoast.com","WordPress SEO plugin","FREE",""],["Ahrefs Webmaster Tools","https://ahrefs.com/webmaster-tools","Free site audit and backlinks","FREE",""],["Bing Webmaster Tools","https://www.bing.com/webmasters","Bing search data","FREE",""],["Seobility","https://www.seobility.net","Free SEO checker","FREE",""],["Mangools","https://mangools.com","Simple keyword research","FREE",""],["SE Ranking","https://seranking.com","Rank tracking and audits","FREE",""]]},{"id":"marketing","cat":"Digital Marketing","tools":[["ChatGPT","https://chat.openai.com","General marketing tasks","FREE",""],["Claude 3","https://claude.ai","Long form marketing content","FREE",""],["Copy.ai","https://www.copy.ai","Marketing copy generator","FREE",""],["Jasper","https://www.jasper.ai","Marketing AI platform","",""],["Writesonic","https://writesonic.com","Blog and content writer","FREE",""],["Anyword","https://anyword.com","Copy performance prediction","FREE",""],["AdCreative.ai","https://www.adcreative.ai","Ad creatives generator","",""],["Canva Magic Studio","https://www.canva.com","Design and writing","FREE",""],["HubSpot AI","https://www.hubspot.com","Marketing automation","",""],["Rytr","https://rytr.me","Cheap writing assistant","FREE",""],["Hypotenuse AI","https://www.hypotenuse.ai","Product descriptions","FREE",""],["Wordtune","https://www.wordtune.com","Rewriter and editor","FREE",""],["Persado","https://www.persado.com","Emotional marketing language","",""],["Smartly.io","https://www.smartly.io","Ad automation","",""],["Mailchimp AI","https://mailchimp.com","Email marketing AI","FREE",""],["Klaviyo AI","https://www.klaviyo.com","Email automation","",""],["ActiveCampaign AI","https://www.activecampaign.com","Marketing automation","",""],["GetResponse AI","https://www.getresponse.com","Email AI","FREE",""],["Buffer AI","https://buffer.com","Social scheduling","FREE",""],["Hootsuite AI","https://www.hootsuite.com","Social management","",""],["Predis.ai","https://predis.ai","Social posts generator","FREE",""],["Flick AI","https://www.flick.social","Hashtag tool","FREE",""],["Ocoya","https://www.ocoya.com","Social automation","FREE",""],["Later AI","https://later.com","Instagram planner","FREE",""],["ManyChat AI","https://manychat.com","Chatbot builder","FREE",""],["Typefully","https://typefully.com","Twitter/X writer","FREE",""],["Brevo AI","https://www.brevo.com","Email and SMS","FREE",""],["Omnisend","https://www.omnisend.com","Ecommerce marketing","FREE",""],["Phrasee","https://phrasee.co","Subject line generator","FREE",""],["Drift AI","https://www.drift.com","Conversational marketing","",""],["Seventh Sense","https://www.theseventhsense.com","Send time optimization","FREE",""],["Optimove","https://www.optimove.com","Customer retention AI","",""],["Google Ads","https://ads.google.com","Search and display ads","FREE",""],["Meta Ads Manager","https://www.facebook.com/business/tools/ads-manager","Facebook and Instagram ads","FREE",""],["MailerLite","https://www.mailerlite.com","Easy email marketing","FREE",""],["Sender","https://www.sender.net","Email and SMS marketing","FREE",""],["Beehiiv","https://www.beehiiv.com","Newsletter platform","FREE",""],["Hunter","https://hunter.io","Find business emails","FREE",""],["Apollo","https://www.apollo.io","Lead database and outreach","FREE",""]]},{"id":"video","cat":"Video AI","tools":[["Sora","https://openai.com/sora","OpenAI text to video","FREE",""],["Runway Gen 3","https://runwayml.com","Best video editing AI","",""],["Pika Labs 3.0","https://pika.art","Text to video generator","FREE",""],["Kling AI","https://klingai.com","Best free video generator","FREE",""],["Pictory AI","https://pictory.ai","Text to video","",""],["InVideo AI","https://invideo.io","Video maker","FREE",""],["HeyGen","https://www.heygen.com","Talking avatars","",""],["Synthesia","https://www.synthesia.io","AI avatars","",""],["Vidnoz AI","https://www.vidnoz.com","Free video generator","FREE",""],["Lumen5","https://lumen5.com","Blog to video","FREE",""],["Descript","https://www.descript.com","Video and podcast editor","FREE",""],["CapCut AI","https://www.capcut.com","Free video editor","FREE",""],["Topaz Video AI","https://www.topazlabs.com","Upscaler","",""],["Fliki","https://fliki.ai","Text to video","FREE",""],["Clipchamp AI","https://clipchamp.com","Free browser editor","FREE",""],["Luma Dream Machine","https://lumalabs.ai/dream-machine","Video generator","FREE",""],["Haiper AI","https://haiper.ai","Free text to video","FREE",""],["Veo","https://deepmind.google/technologies/veo/","Google video generation","FREE",""],["Stable Video","https://stability.ai/news/stable-video","Open source video","FREE",""],["Kaiber","https://kaiber.ai","Music video generator","FREE",""],["ElevenLabs Video","https://elevenlabs.io/video","Lip sync AI","FREE",""],["Murf Video","https://murf.ai/video","Voiceover video","FREE",""],["Wonder Dynamics","https://wonderdynamics.com","CGI actor replacement","FREE",""],["Runway Motion Brush","https://runwayml.com","Video inpainting","FREE",""],["Uncrop","https://stablecog.com/uncrop","Extend video borders","FREE",""],["Frame Interpolation","https://filmixer.com","Smooth slow motion","FREE",""],["Hailuo AI","https://hailuoai.video","Free text to video generator","FREE",""],["Genmo","https://www.genmo.ai","Free AI video generator","FREE",""],["VEED","https://www.veed.io","Online video editor with AI tools","FREE",""],["Opus Clip","https://www.opus.pro","Long video to viral shorts","FREE",""],["Kapwing","https://www.kapwing.com","Browser video editor with AI","FREE",""],["DaVinci Resolve","https://www.blackmagicdesign.com/products/davinciresolve","Free pro editor with AI features","FREE",""],["Filmora","https://filmora.wondershare.com","Easy editor with AI tools","FREE",""],["Vizard","https://vizard.ai","AI video clipping tool","FREE",""],["Google Veo","https://deepmind.google/models/veo/","Google text to video model","FREE",""],["Pollo AI","https://pollo.ai","Multi model video generator","FREE",""]]},{"id":"audio","cat":"Audio AI","tools":[["ElevenLabs","https://elevenlabs.io","Best text to speech","FREE",""],["OpenAI TTS","https://platform.openai.com/docs/guides/text-to-speech","Good quality TTS","FREE",""],["Murf AI","https://murf.ai","Professional voiceover","",""],["Play.ht","https://play.ht","AI voice generation","FREE",""],["Wellsaid Labs","https://wellsaidlabs.com","Natural voices","",""],["Speechify","https://speechify.com","Text reader","FREE",""],["Descript Audio","https://www.descript.com","Podcast editor","FREE",""],["Adobe Podcast","https://podcast.adobe.com","Audio enhancer","FREE",""],["Auphonic","https://auphonic.com","Audio mastering","FREE",""],["Krisp AI","https://krisp.ai","Noise cancellation","FREE",""],["Otter.ai","https://otter.ai","Meeting transcription","FREE",""],["Fireflies.ai","https://fireflies.ai","Meeting notes","FREE",""],["Suno AI","https://suno.com","Generate full songs","FREE",""],["Udio","https://udio.com","Music generation","FREE",""],["Stable Audio","https://stability.ai","Music generation","FREE",""],["Beatoven","https://www.beatoven.ai","Background music","FREE",""],["Epidemic Sound AI","https://www.epidemicsound.com","AI music","",""],["Lalal.ai","https://www.lalal.ai","Stem separator","FREE",""],["Riffusion","https://riffusion.com","Text to music","FREE",""],["AudioCraft","https://audiocraft.metademolab.com","Meta audio AI","FREE",""],["Suno","https://suno.com","AI song and music generator","FREE",""],["Whisper","https://openai.com/research/whisper","Open source speech recognition","FREE",""],["Audacity","https://www.audacityteam.org","Free audio editor","FREE",""],["PlayHT","https://play.ht","AI voice generator","FREE",""],["Krisp","https://krisp.ai","Noise cancelling for calls","FREE",""],["Podcastle","https://podcastle.ai","Podcast recording and editing","FREE",""],["Soundraw","https://soundraw.io","AI royalty free music","FREE",""],["Mubert","https://mubert.com","AI generated music","FREE",""],["NaturalReader","https://www.naturalreaders.com","Text to speech reader","FREE",""]]},{"id":"va","cat":"Virtual Assistant","tools":[["Notion AI","https://www.notion.so","All in one workspace","FREE",""],["ChatGPT","https://chat.openai.com","General assistant","FREE",""],["Claude 3","https://claude.ai","Document and email assistant","FREE",""],["Motion","https://www.usemotion.com","AI calendar and tasks","",""],["Reclaim.ai","https://reclaim.ai","Smart time blocking","FREE",""],["Grammarly","https://www.grammarly.com","Writing assistant","FREE",""],["Zapier AI","https://zapier.com","Workflow automation","FREE",""],["Make AI","https://www.make.com","Automation builder","FREE",""],["Taskade AI","https://www.taskade.com","Project manager","FREE",""],["Tome","https://tome.app","Presentation builder","FREE",""],["Beautiful.ai","https://www.beautiful.ai","Slides builder","FREE",""],["Mem.ai","https://mem.ai","Knowledge base","FREE",""],["Calendly AI","https://calendly.com","Scheduling assistant","FREE",""],["ClickUp AI","https://clickup.com","Project management","FREE",""],["Monday.com AI","https://monday.com","Work management","",""],["Bardeen","https://www.bardeen.ai","Browser automation","FREE",""],["Magical","https://getmagical.com","Text expander","FREE",""],["Text Blaze","https://blaze.today","Snippets","FREE",""],["Alfred","https://www.alfredapp.com","Mac productivity","FREE",""],["Raycast AI","https://www.raycast.com","Launcher assistant","FREE",""],["Arc Search","https://arc.net/search","AI browser","FREE",""],["Perplexity","https://www.perplexity.ai","Research assistant","FREE",""],["Reddit Digest AI","https://reddit.com","Content curator","FREE",""],["Feedly AI","https://feedly.com","RSS assistant","FREE",""],["Zapier","https://zapier.com","Automate work between apps","FREE",""],["Make","https://www.make.com","Visual workflow automation","FREE",""],["Calendly","https://calendly.com","Meeting scheduling","FREE",""],["Todoist","https://todoist.com","Task manager","FREE",""],["Trello","https://trello.com","Kanban project boards","FREE",""],["Microsoft Copilot","https://copilot.microsoft.com","Free AI assistant from Microsoft","FREE",""],["Clockify","https://clockify.me","Free time tracker","FREE",""],["Loom","https://www.loom.com","Quick screen recording","FREE",""],["Tidio","https://www.tidio.com","Live chat and AI chatbot","FREE",""],["Taskade","https://www.taskade.com","AI tasks and notes workspace","FREE",""],["ClickUp","https://clickup.com","Project management with AI","FREE",""],["Gemini","https://gemini.google.com","Google AI assistant","FREE",""],["Grok","https://x.com/i/grok","AI assistant from xAI","FREE",""],["DeepSeek","https://chat.deepseek.com","Free AI chat and coding","FREE",""],["Meta AI","https://meta.ai","Free AI assistant from Meta","FREE",""]]},{"id":"medical","cat":"Medical VA","tools":[["Nuance DAX","https://www.nuance.com/healthcare","Clinical documentation","",""],["Suki AI","https://www.suki.ai","Clinical voice assistant","",""],["Nabla Copilot","https://www.nabla.com","Medical scribe","FREE",""],["DeepScribe","https://www.deepscribe.ai","Medical transcription","",""],["Abridge","https://www.abridge.com","Conversation summarizer","FREE",""],["Doximity GPT","https://www.doximity.com","Physician assistant","FREE",""],["Glass Health","https://glass.health","Clinical reasoning","FREE",""],["Freed AI","https://www.freed.ai","Medical scribe","FREE",""],["ChatGPT Medical","https://chat.openai.com","General medical tasks","FREE",""],["Consensus","https://consensus.app","Medical research","FREE",""],["Mendel AI","https://www.mendel.ai","Clinical data extraction","FREE",""],["Regard","https://www.regard.com","Diagnosis support","FREE",""],["Ambience Healthcare","https://www.ambiencehealthcare.com","Clinical assistant","",""],["Med-PaLM","https://deepmind.google/med-palm","Google medical AI","FREE",""],["OpenEvidence","https://www.openevidence.com","Medical evidence search for clinicians","FREE",""],["Ada Health","https://ada.com","Symptom assessment","FREE",""],["PubMed","https://pubmed.ncbi.nlm.nih.gov","Free medical literature database","FREE",""],["Medscape","https://www.medscape.com","Medical news and references","FREE",""],["Heidi Health","https://www.heidihealth.com","AI medical scribe","FREE",""],["Nabla","https://www.nabla.com","Ambient AI clinical notes","FREE",""],["Epocrates","https://www.epocrates.com","Drug reference","FREE",""],["Drugs.com","https://www.drugs.com","Drug information and interactions","FREE",""],["ClinicalTrials.gov","https://clinicaltrials.gov","Clinical trial database","FREE",""],["MedlinePlus","https://medlineplus.gov","Trusted health information","FREE",""],["WebMD","https://www.webmd.com","Health information","FREE",""],["Mayo Clinic","https://www.mayoclinic.org","Disease and drug reference","FREE",""],["CDC","https://www.cdc.gov","Public health guidelines","FREE",""],["WHO","https://www.who.int","Global health information","FREE",""],["Jotform","https://www.jotform.com","Online forms for clinics","FREE",""]]},{"id":"design","cat":"Design AI","tools":[["DALL-E 3","https://chat.openai.com","OpenAI image generator","FREE",""],["Midjourney v6","https://www.midjourney.com","Best image generator","",""],["Stable Diffusion 3","https://stability.ai","Open source image gen","FREE",""],["Ideogram AI","https://ideogram.ai","Best text in images","FREE",""],["Leonardo AI","https://leonardo.ai","All purpose design","FREE",""],["Flux","https://blackforestlabs.ai","Latest open model","FREE",""],["Adobe Firefly","https://firefly.adobe.com","Commercial safe images","FREE",""],["Canva AI","https://www.canva.com","Design tools","FREE",""],["Figma AI","https://www.figma.com","Design assistant","FREE",""],["Magnific AI","https://magnific.ai","Upscaler and enhancer","",""],["Topaz Photo AI","https://www.topazlabs.com","Photo enhancer","",""],["Removal AI","https://removal.ai","Background remover","FREE",""],["Cleanup.pictures","https://cleanup.pictures","Remove objects","FREE",""],["Upscale.media","https://upscale.media","Free upscaler","FREE",""],["Palette","https://palette.fm","Recolor images","FREE",""],["Recraft AI","https://www.recraft.ai","Vector and illustration","FREE",""],["Microsoft Designer","https://designer.microsoft.com","Free design tool","FREE",""],["PhotoRoom","https://www.photoroom.com","Product photos","FREE",""],["Runway Image Gen","https://runwayml.com","Image generation","FREE",""],["Pixlr AI","https://pixlr.com","Free photo editor","FREE",""],["Ideogram","https://ideogram.ai","Images with accurate text","FREE",""],["Playground","https://playground.com","AI image creator and editor","FREE",""],["Craiyon","https://www.craiyon.com","Free AI image generator","FREE",""],["Remove.bg","https://www.remove.bg","Background remover","FREE",""],["Photopea","https://www.photopea.com","Free browser photo editor","FREE",""],["Krea","https://www.krea.ai","Real time AI image tools","FREE",""],["Looka","https://looka.com","AI logo maker","FREE",""],["Uizard","https://uizard.io","Prototype app screens with AI","FREE",""],["Recraft","https://www.recraft.ai","Vector and brand graphics","FREE",""],["Clipdrop","https://clipdrop.co","Image editing AI tools","FREE",""],["Pixlr","https://pixlr.com","Online photo editor with AI","FREE",""],["Gamma","https://gamma.app","AI presentations and pages","FREE",""],["Canva","https://www.canva.com","Easy design with Magic Studio","FREE",""],["Bing Image Creator","https://www.bing.com/images/create","Free AI image generator","FREE",""],["Adobe Express","https://www.adobe.com/express/","Quick graphics with AI","FREE",""],["Upscayl","https://upscayl.org","Free AI image upscaler","FREE",""]]},{"id":"research","cat":"Research & Writing","tools":[["Perplexity","https://www.perplexity.ai","Best research AI","FREE",""],["Claude 3 Opus","https://claude.ai","Long document analysis","",""],["Gemini Advanced","https://gemini.google.com","Google research","",""],["Consensus","https://consensus.app","Scientific papers","FREE",""],["Semantic Scholar","https://www.semanticscholar.org","Research papers","FREE",""],["Quillbot","https://quillbot.com","Paraphraser","FREE",""],["Grammarly","https://www.grammarly.com","Writing checker","FREE",""],["ProWritingAid","https://prowritingaid.com","Writing assistant","FREE",""],["Litmaps","https://www.litmaps.com","Research maps","FREE",""],["Connected Papers","https://www.connectedpapers.com","Paper explorer","FREE",""],["Zotero AI","https://www.zotero.org","Reference manager","FREE",""],["ChatPDF","https://chatpdf.com","Ask questions to PDF","FREE",""],["Elicit","https://elicit.com","AI research assistant","FREE",""],["Scite","https://scite.ai","Smart citation checker","FREE",""],["Google Scholar","https://scholar.google.com","Scholarly literature search","FREE",""],["NotebookLM","https://notebooklm.google","Chat with your documents","FREE",""],["Scholarcy","https://www.scholarcy.com","Summarize research papers","FREE",""],["ResearchRabbit","https://www.researchrabbit.ai","Discover related papers","FREE",""],["SciSpace","https://scispace.com","Explain and find papers","FREE",""],["Zotero","https://www.zotero.org","Free reference manager","FREE",""],["Wolfram Alpha","https://www.wolframalpha.com","Computational knowledge engine","FREE",""],["You.com","https://you.com","AI search engine","FREE",""]]},{"id":"social","cat":"Social Media","tools":[["Metricool","https://metricool.com","Social scheduling and analytics","FREE",""],["Publer","https://publer.com","Schedule posts across platforms","FREE",""],["SocialBee","https://socialbee.com","Social content planner","FREE",""],["Planable","https://planable.io","Content approval and planning","FREE",""],["Vista Social","https://vistasocial.com","Social management with AI","FREE",""],["Zoho Social","https://www.zoho.com/social","Social media management","FREE",""],["Linktree","https://linktr.ee","Link in bio page","FREE",""],["Bitly","https://bitly.com","Short links and QR codes","FREE",""],["Missinglettr","https://missinglettr.com","Turn blogs into social posts","FREE",""],["Repurpose.io","https://repurpose.io","Auto repost videos","FREE",""],["ContentStudio","https://contentstudio.io","Content discovery and publishing","FREE",""],["Taplio","https://taplio.com","LinkedIn growth tool","FREE",""]]},{"id":"writing","cat":"Writing & Content","tools":[["QuillBot","https://quillbot.com","Paraphraser and summarizer","FREE",""],["Hemingway Editor","https://hemingwayapp.com","Make writing clear","FREE",""],["LanguageTool","https://languagetool.org","Grammar and style checker","FREE",""],["GPTZero","https://gptzero.me","AI content detector","FREE",""],["ZeroGPT","https://www.zerogpt.com","AI text detector","FREE",""],["ProWritingAid","https://prowritingaid.com","Writing editor","FREE",""],["TextCortex","https://textcortex.com","AI writing assistant","FREE",""],["Smodin","https://smodin.io","Writer, rewriter and checker","FREE",""],["Jenni AI","https://jenni.ai","AI essay and research writer","FREE",""],["Writer","https://writer.com","Business writing AI","FREE",""],["Scribbr","https://www.scribbr.com","Plagiarism and citation tools","FREE",""]]},{"id":"business","cat":"Freelance & Business","tools":[["Upwork","https://www.upwork.com","Largest freelance marketplace","EARN","Freelance Marketplaces"],["Fiverr","https://www.fiverr.com","Sell gigs to global clients","EARN","Freelance Marketplaces"],["Freelancer.com","https://www.freelancer.com","Bid on projects and contests","EARN","Freelance Marketplaces"],["PeoplePerHour","https://www.peopleperhour.com","Hourly and fixed price projects","EARN","Freelance Marketplaces"],["Guru","https://www.guru.com","Freelance jobs and workrooms","EARN","Freelance Marketplaces"],["Toptal","https://www.toptal.com","Top talent network, screened","EARN","Freelance Marketplaces"],["99designs","https://99designs.com","Design contests and projects","EARN","Freelance Marketplaces"],["Contra","https://contra.com","Commission free freelance work","EARN","Freelance Marketplaces"],["Truelancer","https://www.truelancer.com","Freelance jobs for South Asia","EARN","Freelance Marketplaces"],["Workana","https://www.workana.com","Latin America freelance market","EARN","Freelance Marketplaces"],["Codeable","https://codeable.io","WordPress expert marketplace","EARN","Freelance Marketplaces"],["Arc","https://arc.dev","Remote developer jobs","EARN","Freelance Marketplaces"],["We Work Remotely","https://weworkremotely.com","Remote job board","EARN","Remote Jobs"],["Remote OK","https://remoteok.com","Remote jobs worldwide","EARN","Remote Jobs"],["Remotive","https://remotive.com","Curated remote jobs","EARN","Remote Jobs"],["Working Nomads","https://www.workingnomads.com","Remote jobs for nomads","EARN","Remote Jobs"],["LinkedIn Jobs","https://www.linkedin.com/jobs/","Job search and applications","EARN","Remote Jobs"],["Wellfound","https://wellfound.com","Startup jobs and freelance","EARN","Remote Jobs"],["Preply","https://preply.com/en/teach/","Teach languages and subjects online","EARN","Online Teaching Marketplaces"],["Cambly","https://www.cambly.com","Teach English by chat","EARN","Online Teaching Marketplaces"],["italki","https://www.italki.com","Language teacher marketplace","EARN","Online Teaching Marketplaces"],["Wyzant","https://www.wyzant.com","Tutoring marketplace","EARN","Online Teaching Marketplaces"],["Superprof","https://www.superprof.com","Find students for private lessons","EARN","Online Teaching Marketplaces"],["Amazon Mechanical Turk","https://www.mturk.com","Small online tasks for pay","EARN","Micro Tasks & Paid Research"],["Clickworker","https://www.clickworker.com","Micro jobs and data tasks","EARN","Micro Tasks & Paid Research"],["Prolific","https://www.prolific.com","Paid research studies","EARN","Micro Tasks & Paid Research"],["UserTesting","https://www.usertesting.com","Get paid to test websites","EARN","Micro Tasks & Paid Research"],["Gumroad","https://gumroad.com","Sell ebooks, templates and courses","EARN","Sell Digital Products"],["Payhip","https://payhip.com","Sell digital downloads","EARN","Sell Digital Products"],["Etsy","https://www.etsy.com","Sell digital printables","EARN","Sell Digital Products"],["Lemon Squeezy","https://www.lemonsqueezy.com","Sell software and digital goods","EARN","Sell Digital Products"],["ThemeForest","https://themeforest.net","Sell website themes","EARN","Sell Digital Products"],["Creative Market","https://creativemarket.com","Sell design assets","EARN","Sell Digital Products"],["Shutterstock Contributor","https://submit.shutterstock.com","Sell photos and videos","EARN","Sell Digital Products"],["Adobe Stock Contributor","https://contributor.stock.adobe.com","Sell stock content","EARN","Sell Digital Products"],["Amazon Associates","https://affiliate-program.amazon.com","Earn commission on products","EARN","Affiliate Programs"],["ShareASale","https://www.shareasale.com","Affiliate network","EARN","Affiliate Programs"],["Impact","https://impact.com","Partnership and affiliate platform","EARN","Affiliate Programs"],["ClickBank","https://www.clickbank.com","Digital product affiliates","EARN","Affiliate Programs"],["CJ Affiliate","https://www.cj.com","Large affiliate network","EARN","Affiliate Programs"],["PartnerStack","https://partnerstack.com","SaaS affiliate programs","EARN","Affiliate Programs"],["Behance","https://www.behance.net","Creative portfolio","FREE","Portfolio & Branding"],["Dribbble","https://dribbble.com","Design portfolio and jobs","FREE","Portfolio & Branding"],["LinkedIn","https://www.linkedin.com","Professional profile and leads","FREE","Portfolio & Branding"],["GitHub","https://github.com","Code portfolio and hosting","FREE","Portfolio & Branding"],["Carrd","https://carrd.co","Simple one page website","FREE","Portfolio & Branding"],["Wave","https://www.waveapps.com","Free invoicing and accounting","FREE","Invoicing & Payments"],["Bonsai","https://www.hellobonsai.com","Contracts and invoices for freelancers","","Invoicing & Payments"],["Payoneer","https://www.payoneer.com","Receive client payments","","Invoicing & Payments"],["Wise","https://wise.com","Low cost money transfer","","Invoicing & Payments"],["PayPal","https://www.paypal.com","Online payments","","Invoicing & Payments"],["Stripe","https://stripe.com","Accept card payments","","Invoicing & Payments"],["PandaDoc","https://www.pandadoc.com","Proposals and e-signatures","","Contracts & Proposals"],["DocuSign","https://www.docusign.com","Electronic signatures","","Contracts & Proposals"],["Dropbox Sign","https://sign.dropbox.com","Simple e-signatures","","Contracts & Proposals"],["Better Proposals","https://betterproposals.io","Client proposal templates","","Contracts & Proposals"],["Pitch","https://pitch.com","Presentations and proposals","FREE","Contracts & Proposals"],["Toggl Track","https://toggl.com/track","Time tracking","FREE","Time & Projects"],["Hubstaff","https://hubstaff.com","Time tracking and monitoring","","Time & Projects"],["Clockify","https://clockify.me","Free time tracker","FREE","Time & Projects"],["Google Analytics","https://analytics.google.com","Website traffic analytics","FREE","Analytics & Reporting"],["Looker Studio","https://lookerstudio.google.com","Free reporting dashboards","FREE","Analytics & Reporting"],["Microsoft Clarity","https://clarity.microsoft.com","Free heatmaps and recordings","FREE","Analytics & Reporting"],["Hotjar","https://www.hotjar.com","User behavior insights","FREE","Analytics & Reporting"],["Google Tag Manager","https://tagmanager.google.com","Manage tracking tags","FREE","Analytics & Reporting"],["Zoom","https://zoom.us","Client video meetings","FREE","Meetings & Forms"],["Google Meet","https://meet.google.com","Free video meetings","FREE","Meetings & Forms"],["Calendly","https://calendly.com","Book client calls","FREE","Meetings & Forms"],["Loom","https://www.loom.com","Quick screen recording","FREE","Meetings & Forms"],["Typeform","https://www.typeform.com","Forms and surveys","FREE","Meetings & Forms"],["Tally","https://tally.so","Free form builder","FREE","Meetings & Forms"],["Coursera","https://www.coursera.org","Online courses and certificates","","Skills & Learning"],["edX","https://www.edx.org","University courses","","Skills & Learning"],["freeCodeCamp","https://www.freecodecamp.org","Free coding lessons","FREE","Skills & Learning"],["Google Skillshop","https://skillshop.withgoogle.com","Free Google certifications","FREE","Skills & Learning"],["HubSpot Academy","https://academy.hubspot.com","Free marketing courses","FREE","Skills & Learning"],["Udemy","https://www.udemy.com","Low cost video courses","","Skills & Learning"]]},{"id":"youtube","cat":"YouTube Channel","tools":[["ChatGPT","https://chatgpt.com","Documentary scripts and ideas","FREE","Script & Research"],["Claude","https://claude.ai","Long form script writing","FREE","Script & Research"],["Gemini","https://gemini.google.com","Research and script drafts","FREE","Script & Research"],["Perplexity","https://www.perplexity.ai","Fact check with sources","FREE","Script & Research"],["NotebookLM","https://notebooklm.google","Turn sources into script notes","FREE","Script & Research"],["YouTube Studio","https://studio.youtube.com","Manage channel and analytics","FREE","Channel Growth"],["vidIQ","https://vidiq.com","Keywords and video ideas","FREE","Channel Growth"],["TubeBuddy","https://www.tubebuddy.com","YouTube SEO and tags","FREE","Channel Growth"],["Social Blade","https://socialblade.com","Channel growth stats","FREE","Channel Growth"],["Google Trends","https://trends.google.com","Find trending topics","FREE","Channel Growth"],["Google AdSense","https://www.google.com/adsense","Monetization for channels","FREE","Channel Growth"],["CapCut","https://www.capcut.com","Shorts and reels editing","FREE","Editing & Shorts"],["DaVinci Resolve","https://www.blackmagicdesign.com/products/davinciresolve","Cinematic long form editing","FREE","Editing & Shorts"],["Kapwing","https://www.kapwing.com","Quick edits and subtitles","FREE","Editing & Shorts"],["Descript","https://www.descript.com","Edit video by editing text","FREE","Editing & Shorts"],["Opus Clip","https://www.opus.pro","Long video to shorts","FREE","Editing & Shorts"],["Vizard","https://vizard.ai","Auto clips for shorts","FREE","Editing & Shorts"],["Submagic","https://www.submagic.co","Animated captions for shorts","FREE","Editing & Shorts"],["Captions","https://www.captions.ai","AI captions and edits","FREE","Editing & Shorts"],["Runway","https://runwayml.com","AI video generation","FREE","AI Video"],["Kling AI","https://klingai.com","Free AI video clips","FREE","AI Video"],["Luma Dream Machine","https://lumalabs.ai/dream-machine","Cinematic AI video","FREE","AI Video"],["Google Veo","https://deepmind.google/models/veo/","Text to video from Google","FREE","AI Video"],["Hailuo AI","https://hailuoai.video","Free AI video generator","FREE","AI Video"],["Pika","https://pika.art","Text and image to video","FREE","AI Video"],["ElevenLabs","https://elevenlabs.io","Voiceover and dubbing in many languages","FREE","Voice, Dubbing & Translation"],["Rask AI","https://www.rask.ai","Translate and dub videos","FREE","Voice, Dubbing & Translation"],["HeyGen","https://www.heygen.com","Video translation with lip sync","FREE","Voice, Dubbing & Translation"],["DeepL","https://www.deepl.com","Accurate script translation","FREE","Voice, Dubbing & Translation"],["Google Translate","https://translate.google.com","Quick translation","FREE","Voice, Dubbing & Translation"],["Happy Scribe","https://www.happyscribe.com","Subtitles and transcripts","FREE","Voice, Dubbing & Translation"],["Pexels","https://www.pexels.com","Free stock videos","FREE","Free Footage"],["Pixabay","https://pixabay.com","Free videos and music","FREE","Free Footage"],["Coverr","https://coverr.co","Free stock footage","FREE","Free Footage"],["Mixkit","https://mixkit.co","Free clips and music","FREE","Free Footage"],["NASA Image Library","https://images.nasa.gov","Public space footage","FREE","Free Footage"],["Internet Archive","https://archive.org","Public domain footage","FREE","Free Footage"],["Wikimedia Commons","https://commons.wikimedia.org","Free media files","FREE","Free Footage"],["YouTube Audio Library","https://www.youtube.com/audiolibrary","Free safe music","FREE","Music & Ambient Sound"],["Suno","https://suno.com","Make background music","FREE","Music & Ambient Sound"],["Mubert","https://mubert.com","Ambient music generator","FREE","Music & Ambient Sound"],["Freesound","https://freesound.org","Free sound effects","FREE","Music & Ambient Sound"],["myNoise","https://mynoise.net","Ocean and ambient sounds","FREE","Music & Ambient Sound"],["Ambient Mixer","https://www.ambient-mixer.com","Mix ambient soundscapes","FREE","Music & Ambient Sound"],["Canva","https://www.canva.com","Thumbnails and channel art","FREE","Thumbnails"],["Photopea","https://www.photopea.com","Free thumbnail editor","FREE","Thumbnails"],["Leonardo AI","https://leonardo.ai","Thumbnail and scene images","FREE","Thumbnails"],["Ideogram","https://ideogram.ai","Thumbnails with clear text","FREE","Thumbnails"]]},{"id":"teaching","cat":"Teaching","tools":[["MagicSchool","https://www.magicschool.ai","AI lesson plans and teacher tools","FREE","Lesson Planning"],["Eduaide","https://www.eduaide.ai","Lesson and resource generator","FREE","Lesson Planning"],["Curipod","https://curipod.com","Interactive AI lessons in minutes","FREE","Lesson Planning"],["Diffit","https://web.diffit.me","Adapt any text to reading level","FREE","Lesson Planning"],["Khanmigo","https://www.khanmigo.ai","AI tutor and teaching assistant","FREE","Lesson Planning"],["Brisk Teaching","https://www.briskteaching.com","AI tools inside Google Docs and Slides","FREE","Lesson Planning"],["ChatGPT","https://chatgpt.com","Lesson ideas and explanations","FREE","Lesson Planning"],["NotebookLM","https://notebooklm.google","Study guides from your materials","FREE","Lesson Planning"],["Kahoot","https://kahoot.com","Game based quizzes","FREE","Quizzes & Assessment"],["Quizizz","https://quizizz.com","Quizzes with instant feedback","FREE","Quizzes & Assessment"],["Quizlet","https://quizlet.com","Flashcards and practice tests","FREE","Quizzes & Assessment"],["Wooclap","https://www.wooclap.com","Live polls and quizzes","FREE","Quizzes & Assessment"],["Mentimeter","https://www.mentimeter.com","Live polls and word clouds","FREE","Quizzes & Assessment"],["Formative","https://www.formative.com","Real time student assessment","FREE","Quizzes & Assessment"],["Google Forms","https://forms.google.com","Free quizzes and surveys","FREE","Quizzes & Assessment"],["Canva for Education","https://www.canva.com/education/","Free design tools for teachers","FREE","Slides & Interactive Lessons"],["Pear Deck","https://www.peardeck.com","Interactive slides","FREE","Slides & Interactive Lessons"],["Genially","https://genial.ly","Interactive presentations","FREE","Slides & Interactive Lessons"],["Nearpod","https://nearpod.com","Interactive lessons and videos","FREE","Slides & Interactive Lessons"],["Padlet","https://padlet.com","Shared boards for class","FREE","Slides & Interactive Lessons"],["Edpuzzle","https://edpuzzle.com","Questions inside videos","FREE","Slides & Interactive Lessons"],["Gradescope","https://www.gradescope.com","Faster grading of exams","FREE","Grading & Feedback"],["CoGrader","https://cograder.com","AI essay grading","","Grading & Feedback"],["Class Companion","https://classcompanion.com","AI writing feedback","FREE","Grading & Feedback"],["Turnitin","https://www.turnitin.com","Plagiarism and similarity check","","Grading & Feedback"],["Google Classroom","https://classroom.google.com","Free class workspace","FREE","Classroom Management"],["ClassDojo","https://www.classdojo.com","Class and parent communication","FREE","Classroom Management"],["Seesaw","https://web.seesaw.me","Student portfolios","FREE","Classroom Management"],["Remind","https://www.remind.com","Message students and parents","FREE","Classroom Management"],["Moodle","https://moodle.org","Open source learning platform","FREE","Classroom Management"],["Google Meet","https://meet.google.com","Online classes","FREE","Classroom Management"],["Microsoft Teams for Education","https://www.microsoft.com/en-us/education","Classes and assignments","FREE","Classroom Management"],["Immersive Reader","https://learningtools.onenote.com","Read aloud and reading support","FREE","Accessibility & Language"],["Duolingo","https://www.duolingo.com","Language learning","FREE","Accessibility & Language"],["Speechify","https://speechify.com","Text to speech for learners","FREE","Accessibility & Language"],["Google Translate","https://translate.google.com","Translate class material","FREE","Accessibility & Language"],["Khan Academy","https://www.khanacademy.org","Free lessons and practice","FREE","Subject Tools"],["Desmos","https://www.desmos.com","Free graphing calculator","FREE","Subject Tools"],["GeoGebra","https://www.geogebra.org","Math visual tools","FREE","Subject Tools"],["PhET Simulations","https://phet.colorado.edu","Free science simulations","FREE","Subject Tools"],["Photomath","https://photomath.com","Step by step math help","FREE","Subject Tools"],["Wolfram Alpha","https://www.wolframalpha.com","Solve math and science problems","FREE","Subject Tools"],["Teachable","https://teachable.com","Sell and host online courses","","Online Courses"],["Thinkific","https://www.thinkific.com","Build online courses","","Online Courses"],["Udemy Instructor","https://www.udemy.com/teaching/","Publish courses to students","EARN","Online Courses"],["OBS Studio","https://obsproject.com","Free screen and lesson recording","FREE","Online Courses"],["Zoom","https://zoom.us","Live online classes","","Online Courses"]]},{"id":"jobs","cat":"Jobs & Work Abroad","tools":[["Indeed","https://www.indeed.com","World largest job search site","EARN","Global Job Sites"],["Glassdoor","https://www.glassdoor.com","Jobs, salaries and company reviews","EARN","Global Job Sites"],["Monster","https://www.monster.com","Job search and career advice","EARN","Global Job Sites"],["Jooble","https://jooble.org","Jobs from many countries in one place","EARN","Global Job Sites"],["Adzuna","https://www.adzuna.com","Job search with salary data","EARN","Global Job Sites"],["ZipRecruiter","https://www.ziprecruiter.com","Apply to jobs in one click","EARN","Global Job Sites"],["SimplyHired","https://www.simplyhired.com","Job search engine","EARN","Global Job Sites"],["Talent.com","https://www.talent.com","Jobs across many countries","EARN","Global Job Sites"],["BDJobs","https://www.bdjobs.com","Biggest job site in Bangladesh","EARN","Bangladesh Jobs"],["Chakri.com","https://www.chakri.com","Bangladesh job portal","EARN","Bangladesh Jobs"],["Skill Jobs","https://skill.jobs","Jobs and skill development","EARN","Bangladesh Jobs"],["Shomvob","https://shomvob.co","Jobs for skilled workers","EARN","Bangladesh Jobs"],["Careerjet Bangladesh","https://www.careerjet.com.bd","Job search engine for Bangladesh","EARN","Bangladesh Jobs"],["Teletalk Govt Jobs","https://alljobs.teletalk.com.bd","Government job applications","EARN","Bangladesh Jobs"],["Bayt Kuwait","https://www.bayt.com/en/kuwait/jobs/","Top Gulf job site, Kuwait jobs","EARN","Kuwait"],["Indeed Kuwait","https://kw.indeed.com","Job search in Kuwait","EARN","Kuwait"],["Naukrigulf Kuwait","https://www.naukrigulf.com","Gulf jobs portal","EARN","Kuwait"],["GulfTalent","https://www.gulftalent.com","Professional jobs in the Gulf","EARN","Kuwait"],["Kuwait e-Visa","https://evisa.moi.gov.kw","Official visa portal","INFO","Kuwait"],["Bayt Qatar","https://www.bayt.com/en/qatar/jobs/","Qatar jobs on Bayt","EARN","Qatar"],["Indeed Qatar","https://qa.indeed.com","Job search in Qatar","EARN","Qatar"],["Qatar Living Jobs","https://www.qatarliving.com/jobs","Local Qatar job listings","EARN","Qatar"],["Qatar Airways Careers","https://careers.qatarairways.com","Airline and aviation careers","EARN","Qatar"],["Hukoomi","https://hukoomi.gov.qa","Official Qatar government portal","INFO","Qatar"],["Bayt Saudi Arabia","https://www.bayt.com/en/saudi-arabia/jobs/","Saudi jobs on Bayt","EARN","Saudi Arabia"],["Indeed Saudi Arabia","https://sa.indeed.com","Job search in Saudi Arabia","EARN","Saudi Arabia"],["Jadarat","https://jadarat.sa","National employment platform","INFO","Saudi Arabia"],["Qiwa","https://www.qiwa.sa","Labor services and work contracts","INFO","Saudi Arabia"],["Naukrigulf","https://www.naukrigulf.com/saudi-arabia-jobs","Saudi jobs on Naukrigulf","EARN","Saudi Arabia"],["Nabbesh","https://nabbesh.com","Freelance marketplace for MENA","EARN","Middle East Freelance"],["Mostaql","https://mostaql.com","Arabic freelance marketplace","EARN","Middle East Freelance"],["Khamsat","https://khamsat.com","Arabic micro services marketplace","EARN","Middle East Freelance"],["InfoJobs","https://www.infojobs.net","Biggest job site in Spain","EARN","Spain"],["Indeed Spain","https://es.indeed.com","Job search in Spain","EARN","Spain"],["Tecnoempleo","https://www.tecnoempleo.com","Tech jobs in Spain","EARN","Spain"],["Malt Spain","https://www.malt.es","Freelance marketplace in Spain","EARN","Spain"],["EURES","https://eures.europa.eu","Official EU job mobility portal","INFO","Spain"],["Jobs.ch","https://www.jobs.ch","Biggest job site in Switzerland","EARN","Switzerland"],["Jobup.ch","https://www.jobup.ch","Jobs in French speaking Switzerland","EARN","Switzerland"],["JobScout24","https://www.jobscout24.ch","Swiss job portal","EARN","Switzerland"],["SwissDevJobs","https://swissdevjobs.ch","IT jobs in Switzerland with salaries","EARN","Switzerland"],["Indeed Switzerland","https://ch.indeed.com","Job search in Switzerland","EARN","Switzerland"],["Xing","https://www.xing.com","Professional network for DACH region","EARN","Switzerland"],["Swiss Migration (SEM)","https://www.sem.admin.ch","Official visa and permit info","INFO","Switzerland"],["Zhaopin","https://www.zhaopin.com","Major Chinese job platform","EARN","China"],["51job","https://www.51job.com","Large Chinese job portal","EARN","China"],["Liepin","https://www.liepin.com","Mid and senior level jobs","EARN","China"],["BOSS Zhipin","https://www.zhipin.com","Chat directly with hiring managers","EARN","China"],["Dave's ESL Cafe","https://www.eslcafe.com","English teaching jobs in China","EARN","China"],["ZBJ","https://www.zbj.com","Chinese freelance marketplace","EARN","China"],["USAJobs","https://www.usajobs.gov","Official US government jobs","EARN","USA"],["Dice","https://www.dice.com","Tech jobs in the US","EARN","USA"],["Handshake","https://joinhandshake.com","Jobs for students and graduates","EARN","USA"],["Braintrust","https://www.usebraintrust.com","Freelance tech talent network","EARN","USA"],["Catalant","https://gocatalant.com","Consulting and expert freelancers","EARN","USA"],["MyVisaJobs","https://www.myvisajobs.com","Find companies that sponsor visas","INFO","USA"],["H1BGrader","https://h1bgrader.com","H1B sponsor data","INFO","USA"],["USCIS","https://www.uscis.gov","Official US immigration info","INFO","USA"],["Relocate.me","https://relocate.me","Tech jobs with relocation help","EARN","Relocation & Europe"],["Landing.jobs","https://landing.jobs","Tech jobs in Europe with visa support","EARN","Relocation & Europe"],["Welcome to the Jungle","https://www.welcometothejungle.com","Jobs and company culture in Europe","EARN","Relocation & Europe"],["Teach Away","https://www.teachaway.com","Teaching jobs in many countries","EARN","Teaching Jobs Abroad"],["Search Associates","https://www.searchassociates.com","International school jobs","EARN","Teaching Jobs Abroad"],["TES Jobs","https://www.tes.com/jobs","Teaching jobs worldwide","EARN","Teaching Jobs Abroad"]]}];
+
+var I18N = {
+ en:{brand:'Monjurul Islam Polash',nav_services:'Services',nav_process:'Process',nav_toolkit:'AI toolkit',nav_channels:'Channels',nav_contact:'Contact',hire:'Hire me',
+  open:'Open for projects',name:'Monjurul Islam Polash',role:'Digital marketer, SEO specialist and web developer in Dhaka, Bangladesh.',
+  lead:'Freelancer for 5+ years across digital marketing, SEO, web development, social media and virtual assistance. Available 24/7.',
+  cta1:'Start a project',cta2:'Browse the AI toolkit',tag:'Transforming ideas into digital reality.',
+  lg_t:'Dhaka and your city, right now',lg_s:'Each bar is one day in that city. The red hour is now. Green hours are 9 am to 6 pm there.',lg_now:'Now',lg_biz:'Business hours',lg_off:'After hours',
+  home:'Home base',bizs:'business hours',offs:'after hours',behind:'behind Dhaka',ahead:'ahead of Dhaka',
+  f1:'years of freelancing',f2:'projects',f3:'YouTube channels',f4:'AI tools in my toolkit',
+  about_t:'About',about_1:'I am Monjurul Islam Polash, a freelancer in Dhaka. For more than five years I have helped businesses grow online with marketing, search optimization, websites and day-to-day admin support.',
+  about_2:'My goal is simple: deliver results that go beyond what the client asked for. I also run a network of YouTube channels and I teach, so I explain my work in plain words.',
+  svc_t:'Services',svc_s:'Six areas of work. Pick one, or combine them in a single project.',
+  pr_t:'How a project runs',pr_s:'Four steps, the same for a small task and a long engagement.',
+  p1t:'Brief',p1d:'You share the goal, budget and deadline. I reply with scope and price.',p2t:'Plan',p2d:'A short plan with milestones, so you know what arrives and when.',
+  p3t:'Build',p3d:'Work happens in small steps and you see progress along the way.',p4t:'Deliver',p4d:'Handover of the finished work, and help after launch.',
+  ch_t:'Mystic Globe Docs',ch_s:'My own media project: one documentary brand published through 13 YouTube channels, one for each market.',
+  ch_h:'The channels',ch_p:'Every channel runs under the Mystic Globe Docs name: twelve country hubs, plus one channel with no voice.',
+  te_h:'Teaching',te_p:'I work as a teacher too. The AI toolkit below has a Teaching group with 47 tools for lesson plans, quizzes, grading, classroom management and online courses.',te_b:'Open the Teaching tools',
+  tk_t:'AI toolkit',tk_ph:'Search tools, for example video, invoice, Indeed',tk_intro:'{n} tools in {g} groups, chosen for client work, YouTube, teaching and finding work abroad.',
+  k1:'free or freemium',k2:'a place to earn money',k3:'official information',k4:'No badge means paid. Plans and prices change, so check each site.',
+  tk_all:'All',tk_back:'All groups',tk_none:'No tool matches that search. Try a shorter word.',tk_more:'Showing the first {n} matches. Type more to narrow them.',tools:'tools',
+  ct_t:'Start a project',ct_s:'Tell me what you need. Direct hiring means no platform fees.',c_wa:'WhatsApp',c_ph:'Phone',c_em:'Email',c_mail:'Email me',copy:'Copy',copied:'Copied',
+  fn:'Your name',fs:'What do you need?',fm:'Message',fb:'Open WhatsApp with this message',fh:'Your message opens in WhatsApp. Press send there to deliver it.',
+  fok:'WhatsApp opened in a new tab with your message. Press send there.',ferr:'Add a name and a message first.',
+  foot:'Digital marketing, SEO, web development, virtual assistance. Dhaka, Bangladesh.'},
+ bn:{brand:'মঞ্জুরুল ইসলাম পলাশ',nav_services:'সার্ভিস',nav_process:'কাজের ধাপ',nav_toolkit:'AI টুলকিট',nav_channels:'চ্যানেল',nav_contact:'যোগাযোগ',hire:'আমাকে হায়ার করুন',
+  open:'নতুন প্রজেক্টের জন্য প্রস্তুত',name:'মঞ্জুরুল ইসলাম পলাশ',role:'ঢাকা, বাংলাদেশ থেকে ডিজিটাল মার্কেটার, এসইও বিশেষজ্ঞ ও ওয়েব ডেভেলপার।',
+  lead:'ডিজিটাল মার্কেটিং, এসইও, ওয়েব ডেভেলপমেন্ট, সোশ্যাল মিডিয়া ও ভার্চুয়াল অ্যাসিস্ট্যান্স নিয়ে ৫ বছরের বেশি ফ্রিল্যান্সিং। ২৪/৭ পাওয়া যায়।',
+  cta1:'প্রজেক্ট শুরু করুন',cta2:'AI টুলকিট দেখুন',tag:'আইডিয়াকে ডিজিটাল বাস্তবতায় রূপ দিই।',
+  lg_t:'ঢাকা এবং আপনার শহর, এখন',lg_s:'প্রতিটি বার ওই শহরের একটি দিন। লাল ঘরটি এখনকার ঘণ্টা। সবুজ ঘরগুলো সেখানকার সকাল ৯টা থেকে সন্ধ্যা ৬টা।',lg_now:'এখন',lg_biz:'কাজের সময়',lg_off:'কাজের সময়ের বাইরে',
+  home:'আমার শহর',bizs:'এখন কাজের সময়',offs:'এখন কাজের সময়ের বাইরে',behind:'ঢাকার চেয়ে পিছিয়ে',ahead:'ঢাকার চেয়ে এগিয়ে',
+  f1:'বছরের ফ্রিল্যান্সিং',f2:'প্রজেক্ট',f3:'ইউটিউব চ্যানেল',f4:'AI টুল আমার টুলকিটে',
+  about_t:'পরিচিতি',about_1:'আমি মঞ্জুরুল ইসলাম পলাশ, ঢাকার একজন ফ্রিল্যান্সার। পাঁচ বছরের বেশি সময় ধরে মার্কেটিং, সার্চ অপটিমাইজেশন, ওয়েবসাইট ও দৈনন্দিন অ্যাডমিন সাপোর্ট দিয়ে ব্যবসাকে অনলাইনে বড় করতে সাহায্য করছি।',
+  about_2:'আমার লক্ষ্য সহজ: ক্লায়েন্ট যা চেয়েছেন তার চেয়েও ভালো ফলাফল দেওয়া। আমি ইউটিউব চ্যানেলের একটি নেটওয়ার্ক চালাই এবং শিক্ষকতাও করি, তাই কাজ সহজ ভাষায় বুঝিয়ে বলতে পারি।',
+  svc_t:'সার্ভিস',svc_s:'কাজের ছয়টি ক্ষেত্র। একটি বেছে নিন, অথবা এক প্রজেক্টে একাধিক মিলিয়ে নিন।',
+  pr_t:'একটি প্রজেক্ট যেভাবে চলে',pr_s:'চারটি ধাপ, ছোট কাজ বা দীর্ঘ চুক্তি, দুটোর জন্যই একই।',
+  p1t:'ব্রিফ',p1d:'আপনি লক্ষ্য, বাজেট ও সময়সীমা জানান। আমি কাজের পরিধি ও দাম জানাই।',p2t:'পরিকল্পনা',p2d:'ছোট একটি পরিকল্পনা, ধাপসহ, যাতে কখন কী পাবেন জানতে পারেন।',
+  p3t:'তৈরি',p3d:'কাজ ছোট ছোট ধাপে হয় এবং আপনি অগ্রগতি দেখতে পান।',p4t:'ডেলিভারি',p4d:'শেষ কাজ বুঝিয়ে দেওয়া এবং চালুর পরে সহায়তা।',
+  ch_t:'Mystic Globe Docs',ch_s:'আমার নিজস্ব মিডিয়া প্রজেক্ট: একটি ডকুমেন্টারি ব্র্যান্ড, ১৩টি ইউটিউব চ্যানেলে, প্রতিটি বাজারের জন্য একটি।',
+  ch_h:'চ্যানেলগুলো',ch_p:'প্রতিটি চ্যানেল Mystic Globe Docs নামে চলে: বারোটি দেশের হাব এবং কথা ছাড়া একটি চ্যানেল।',
+  te_h:'শিক্ষকতা',te_p:'আমি শিক্ষকতাও করি। নিচের AI টুলকিটে শিক্ষকদের জন্য ৪৭টি টুলের একটি গ্রুপ আছে: পাঠ পরিকল্পনা, কুইজ, গ্রেডিং, ক্লাস পরিচালনা ও অনলাইন কোর্সের জন্য।',te_b:'শিক্ষকতার টুল দেখুন',
+  tk_t:'AI টুলকিট',tk_ph:'টুল খুঁজুন, যেমন video, invoice, Indeed',tk_intro:'{g}টি গ্রুপে {n}টি টুল, ক্লায়েন্টের কাজ, ইউটিউব, শিক্ষকতা ও বিদেশে কাজ খোঁজার জন্য বাছাই করা।',
+  k1:'ফ্রি বা ফ্রিমিয়াম',k2:'আয়ের সুযোগ',k3:'সরকারি বা অফিসিয়াল তথ্য',k4:'ব্যাজ না থাকলে পেইড। প্ল্যান ও দাম বদলায়, তাই প্রতিটি সাইটে দেখে নিন।',
+  tk_all:'সব',tk_back:'সব গ্রুপ',tk_none:'এই সার্চে কোনো টুল মেলেনি। ছোট একটি শব্দ লিখে দেখুন।',tk_more:'প্রথম {n}টি ফলাফল দেখানো হচ্ছে। আরও লিখে সংকীর্ণ করুন।',tools:'টুল',
+  ct_t:'প্রজেক্ট শুরু করুন',ct_s:'কী দরকার জানান। সরাসরি হায়ার করলে প্ল্যাটফর্ম ফি লাগে না।',c_wa:'হোয়াটসঅ্যাপ',c_ph:'ফোন',c_em:'ইমেইল',c_mail:'ইমেইল করুন',copy:'কপি',copied:'কপি হয়েছে',
+  fn:'আপনার নাম',fs:'আপনার কী দরকার?',fm:'বার্তা',fb:'বার্তাসহ হোয়াটসঅ্যাপ খুলুন',fh:'আপনার বার্তা হোয়াটসঅ্যাপে খুলবে। সেখানে সেন্ড চাপলে পৌঁছাবে।',
+  fok:'আপনার বার্তাসহ হোয়াটসঅ্যাপ নতুন ট্যাবে খুলেছে। সেখানে সেন্ড চাপুন।',ferr:'আগে নাম ও বার্তা লিখুন।',
+  foot:'ডিজিটাল মার্কেটিং, এসইও, ওয়েব ডেভেলপমেন্ট, ভার্চুয়াল অ্যাসিস্ট্যান্স। ঢাকা, বাংলাদেশ।'}
+};
+
+var SERVICES = [
+ {en:['Digital Marketing',['Google Ads campaigns','Facebook marketing','Email marketing','PPC','Conversion optimization']],
+  bn:['ডিজিটাল মার্কেটিং',['গুগল অ্যাডস ক্যাম্পেইন','ফেসবুক মার্কেটিং','ইমেইল মার্কেটিং','পিপিসি','কনভার্সন অপটিমাইজেশন']]},
+ {en:['Web Development',['Responsive design','E-commerce solutions','CMS development']],
+  bn:['ওয়েব ডেভেলপমেন্ট',['রেসপনসিভ ডিজাইন','ই-কমার্স সমাধান','সিএমএস ডেভেলপমেন্ট']]},
+ {en:['SEO',['Keyword research','On-page SEO','Off-page SEO']],
+  bn:['এসইও',['কিওয়ার্ড রিসার্চ','অন-পেজ এসইও','অফ-পেজ এসইও']]},
+ {en:['Social Media Marketing',['Content creation','Community management','Social ads']],
+  bn:['সোশ্যাল মিডিয়া মার্কেটিং',['কনটেন্ট তৈরি','কমিউনিটি ম্যানেজমেন্ট','সোশ্যাল অ্যাডস']]},
+ {en:['Virtual Assistance',['Admin support','Customer service','Data management']],
+  bn:['ভার্চুয়াল অ্যাসিস্ট্যান্স',['অ্যাডমিন সাপোর্ট','কাস্টমার সার্ভিস','ডাটা ম্যানেজমেন্ট']]},
+ {en:['Graphic Design',['Logo design','Brand identity','UI/UX design']],
+  bn:['গ্রাফিক ডিজাইন',['লোগো ডিজাইন','ব্র্যান্ড আইডেন্টিটি','ইউআই/ইউএক্স ডিজাইন']]}
+];
+
+var CHANNELS = [
+ ['USA, new hub','1-minute trending and viral shorts','USA, নতুন হাব','১ মিনিটের ট্রেন্ডিং ও ভাইরাল শর্টস'],
+ ['USA, old hub','5-minute cinematic long-form documentaries','USA, পুরনো হাব','৫ মিনিটের সিনেমাটিক লং-ফর্ম ডকুমেন্টারি'],
+ ['United Kingdom (UK)','Shorts and long videos','যুক্তরাজ্য (UK)','শর্টস ও লং ভিডিও'],
+ ['Australia (AU)','Shorts and long videos','অস্ট্রেলিয়া (AU)','শর্টস ও লং ভিডিও'],
+ ['Japan (JP)','Shorts and long videos','জাপান (JP)','শর্টস ও লং ভিডিও'],
+ ['Germany (DE)','Shorts and long videos','জার্মানি (DE)','শর্টস ও লং ভিডিও'],
+ ['Spain and Latin America (ES)','Shorts and long videos','স্পেন ও ল্যাটিন আমেরিকা (ES)','শর্টস ও লং ভিডিও'],
+ ['Switzerland (CW)','Shorts and long videos','সুইজারল্যান্ড (CW)','শর্টস ও লং ভিডিও'],
+ ['Netherlands (NL)','Shorts and long videos','নেদারল্যান্ডস (NL)','শর্টস ও লং ভিডিও'],
+ ['Norway (NO)','Shorts and long videos','নরওয়ে (NO)','শর্টস ও লং ভিডিও'],
+ ['United Arab Emirates (AE)','Shorts and long videos','সংযুক্ত আরব আমিরাত (AE)','শর্টস ও লং ভিডিও'],
+ ['Bangladesh (Bangla)','Shorts and long videos','বাংলাদেশ (বাংলা)','শর্টস ও লং ভিডিও'],
+ ['Mystic Globe Relaxing, no voice','Soundless ambient loops, 30 minutes to 3 hours','Mystic Globe Relaxing, কথা ছাড়া','৩০ মিনিট থেকে ৩ ঘণ্টার শব্দহীন অ্যাম্বিয়েন্ট লুপ']
+];
+
+var CITIES = [
+ {tz:'Asia/Dhaka',en:'Dhaka',bn:'ঢাকা',home:true},
+ {tz:'Asia/Kuwait',en:'Kuwait',bn:'কুয়েত'},
+ {tz:'Asia/Qatar',en:'Qatar',bn:'কাতার'},
+ {tz:'Asia/Riyadh',en:'Saudi Arabia',bn:'সৌদি আরব'},
+ {tz:'Europe/Madrid',en:'Spain',bn:'স্পেন'},
+ {tz:'Europe/Zurich',en:'Switzerland',bn:'সুইজারল্যান্ড'},
+ {tz:'Asia/Shanghai',en:'China',bn:'চীন'},
+ {tz:'America/New_York',en:'USA, New York',bn:'যুক্তরাষ্ট্র, নিউ ইয়র্ক'}
+];
+
+var lang = 'en';
+function T(k){ return (I18N[lang] && I18N[lang][k]) || I18N.en[k] || ''; }
+function $(s,r){ return (r||document).querySelector(s); }
+function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+function store(k,v){ try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v);}catch(e){} return null; }
+
+/* ---- live ledger ---- */
+function hm(tz,d){
+  var p = new Intl.DateTimeFormat('en-GB',{timeZone:tz,hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(d);
+  var h=0,m=0; p.forEach(function(x){ if(x.type==='hour') h=parseInt(x.value,10)%24; if(x.type==='minute') m=parseInt(x.value,10); });
+  return {h:h,m:m};
+}
+function pad(n){ return (n<10?'0':'')+n; }
+function buildRows(){
+  var html='';
+  CITIES.forEach(function(c,i){
+    var bar=''; for(var k=0;k<24;k++) bar+='<i></i>';
+    html+='<div class="lrow'+(c.home?' home':'')+'" style="--i:'+i+'" data-tz="'+c.tz+'">'+
+      '<div class="city"><span data-c="'+c.tz+'"></span><small data-d="'+c.tz+'"></small></div>'+
+      '<div class="clock" data-t="'+c.tz+'">--:--</div>'+
+      '<div class="bar" aria-hidden="true">'+bar+'</div></div>';
+  });
+  $('#rows').innerHTML=html;
+}
+function tickLedger(){
+  var now=new Date(), home=hm('Asia/Dhaka',now), hmin=home.h*60+home.m;
+  CITIES.forEach(function(c){
+    var t=hm(c.tz,now), row=$('[data-tz="'+c.tz+'"]');
+    if(!row) return;
+    row.querySelector('[data-c]').textContent=c[lang];
+    $('[data-t="'+c.tz+'"]',row).textContent=pad(t.h)+':'+pad(t.m);
+    var cells=row.querySelectorAll('.bar i');
+    for(var k=0;k<24;k++){ cells[k].className=(k===t.h?'n':(k>=9&&k<18?'b':'')); }
+    var diff=(t.h*60+t.m)-hmin; if(diff>720) diff-=1440; if(diff<=-720) diff+=1440;
+    var d=$('[data-d="'+c.tz+'"]',row);
+    var st=(t.h>=9&&t.h<18)?T('bizs'):T('offs');
+    if(c.home){ d.textContent=T('home')+' · '+st; }
+    else { var hrs=Math.abs(diff)/60; d.textContent=(Math.round(hrs*2)/2)+'h '+(diff<0?T('behind'):T('ahead'))+' · '+st; }
+  });
+  $('#hero-clock').textContent=pad(home.h)+':'+pad(home.m);
+}
+
+/* ---- services, channels ---- */
+function renderStatic(){
+  $('#svc').innerHTML=SERVICES.map(function(s){
+    var d=s[lang];
+    return '<div class="srow"><h3>'+esc(d[0])+'</h3><div class="pills">'+d[1].map(function(x){return '<span>'+esc(x)+'</span>';}).join('')+'</div></div>';
+  }).join('');
+  $('#chan').innerHTML=CHANNELS.map(function(c){
+    return '<div class="chan"><b>'+esc(lang==='bn'?c[2]:c[0])+'</b><span>'+esc(lang==='bn'?c[3]:c[1])+'</span></div>';
+  }).join('');
+}
+
+/* ---- toolkit ---- */
+var total=0; TOOLS.forEach(function(c){ total+=c.tools.length; });
+var cat='all', query='';
+function toolHtml(t,showCat){
+  return '<a class="tool" href="'+esc(t[1])+'" target="_blank" rel="noopener">'+
+    (t[3]?'<span class="tb '+esc(t[3])+'">'+esc(t[3])+'</span>':'')+
+    '<span class="tn">'+esc(t[0])+'</span><span class="td">'+esc(t[2])+'</span>'+
+    (showCat?'<span class="tc">'+esc(showCat)+'</span>':'')+'</a>';
+}
+function renderChips(){
+  var h='<button type="button" class="chip" data-cat="all" aria-pressed="'+(cat==='all')+'">'+esc(T('tk_all'))+'<small>'+total+'</small></button>';
+  TOOLS.forEach(function(c){ h+='<button type="button" class="chip" data-cat="'+c.id+'" aria-pressed="'+(cat===c.id)+'">'+esc(c.cat)+'<small>'+c.tools.length+'</small></button>'; });
+  $('#chips').innerHTML=h;
+}
+function renderTools(){
+  var out=$('#tk-out'), q=query.trim().toLowerCase(), h='', n=0;
+  if(q){
+    var hits=[];
+    TOOLS.forEach(function(c){ c.tools.forEach(function(t){
+      if((t[0]+' '+t[2]+' '+c.cat+' '+t[4]).toLowerCase().indexOf(q)!==-1) hits.push([t,c.cat]);
+    });});
+    n=hits.length;
+    if(!n) h='<p class="empty">'+esc(T('tk_none'))+'</p>';
+    else { h='<div class="grid">'+hits.slice(0,96).map(function(x){return toolHtml(x[0],x[1]);}).join('')+'</div>';
+      if(n>96) h+='<p class="hint" style="margin-top:12px">'+esc(T('tk_more').replace('{n}',96))+'</p>'; }
+  } else if(cat==='all'){
+    n=total;
+    h='<div class="overview">'+TOOLS.map(function(c){
+      return '<button type="button" class="ov" data-open="'+c.id+'"><b>'+esc(c.cat)+'<em>'+c.tools.length+'</em></b><span>'+esc(c.tools.slice(0,4).map(function(t){return t[0];}).join(', '))+'…</span></button>';
+    }).join('')+'</div>';
+  } else {
+    var c=TOOLS.filter(function(x){return x.id===cat;})[0]; n=c.tools.length;
+    var groups=[], map={};
+    c.tools.forEach(function(t){ var k=t[4]||''; if(!map[k]){ map[k]=[]; groups.push(k);} map[k].push(t); });
+    h='<button type="button" class="back" data-open="all">← '+esc(T('tk_back'))+'</button>';
+    groups.forEach(function(k){
+      if(k) h+='<div class="sub-h"><span>'+esc(k)+'</span><small>'+map[k].length+'</small></div>';
+      h+='<div class="grid">'+map[k].map(function(t){return toolHtml(t);}).join('')+'</div>';
+    });
+  }
+  out.innerHTML=h;
+  $('#tk-count').textContent=n+' '+T('tools');
+}
+function setCat(id){ cat=id; renderChips(); renderTools(); }
+
+/* ---- language, theme ---- */
+function applyLang(l){
+  lang=l; document.documentElement.lang=(l==='bn'?'bn':'en');
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ var v=I18N[l][el.getAttribute('data-i18n')]; if(v!==undefined) el.textContent=v; });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){ el.placeholder=I18N[l][el.getAttribute('data-i18n-ph')]; });
+  $('#l-en').setAttribute('aria-pressed',l==='en'); $('#l-bn').setAttribute('aria-pressed',l==='bn');
+  $('#tk-intro').textContent=T('tk_intro').replace('{n}',total).replace('{g}',TOOLS.length);
+  $('#f-tools').textContent=total;
+  renderStatic(); renderChips(); renderTools(); tickLedger();
+  store('mip-lang',l);
+}
+function toggleTheme(){
+  var root=document.documentElement, cur=root.getAttribute('data-theme');
+  if(!cur) cur=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+  var next=cur==='dark'?'light':'dark'; root.setAttribute('data-theme',next); store('mip-theme',next);
+}
+
+/* ---- contact ---- */
+function copyText(text,btn){
+  var old=btn.textContent, done=function(){ btn.textContent=T('copied'); setTimeout(function(){ btn.textContent=T('copy'); },1400); };
+  function fallback(){ var a=document.createElement('textarea'); a.value=text; document.body.appendChild(a); a.select(); try{ document.execCommand('copy'); done(); }catch(e){} a.remove(); }
+  try{ navigator.clipboard.writeText(text).then(done,fallback); }catch(e){ fallback(); }
+}
+
+document.addEventListener('click',function(e){
+  var c=e.target.closest('.chip'); if(c){ setCat(c.getAttribute('data-cat')); return; }
+  var o=e.target.closest('[data-open]'); if(o){ setCat(o.getAttribute('data-open')); return; }
+  var cp=e.target.closest('[data-copy]'); if(cp){ copyText(cp.getAttribute('data-copy'),cp); return; }
+  if(e.target.closest('#to-teach')){ setCat('teaching'); }
+});
+$('#tk-q').addEventListener('input',function(e){ query=e.target.value; renderTools(); });
+$('#l-en').addEventListener('click',function(){ applyLang('en'); });
+$('#l-bn').addEventListener('click',function(){ applyLang('bn'); });
+$('#theme').addEventListener('click',toggleTheme);
+$('#form').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=$('#f-name').value.trim(), s=$('#f-need').value.trim(), m=$('#f-msg').value.trim(), ok=$('#f-ok');
+  ok.hidden=false;
+  if(!n||!m){ ok.textContent=T('ferr'); return; }
+  var text='Hello Polash, I am '+n+'.'+(s?' I need: '+s+'.':'')+'\n'+m;
+  window.open('https://wa.me/8801723328481?text='+encodeURIComponent(text),'_blank','noopener');
+  ok.textContent=T('fok');
+});
+
+/* ---- profile buttons (only for links you fill in) ---- */
+(function(){
+  var h=''; Object.keys(PROFILES).forEach(function(k){ if(PROFILES[k]) h+='<a class="btn ghost small" href="'+esc(PROFILES[k])+'" target="_blank" rel="noopener">'+esc(k)+'</a>'; });
+  if(h){ var p=$('#plat'); p.innerHTML=h; p.hidden=false; }
+})();
+
+buildRows();
+var saved=store('mip-lang'), savedTheme=store('mip-theme');
+if(savedTheme==='dark'||savedTheme==='light') document.documentElement.setAttribute('data-theme',savedTheme);
+applyLang(saved==='bn'?'bn':'en');
+setInterval(tickLedger,20000);
+</script>
+
+</body>
+</html>
